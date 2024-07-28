@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Topics of Python</title>
+    <link rel="stylesheet" href="PythonPrep.css">
+</head>
+<body>
+    <header>
+        <h1>Fundamental Topics of Python</h1>
+    </header>
+
+    <nav>
+        <pre><ul>
+            <li>1.<a href="#introduction">Introduction</a></li> <li>2.<a href="#basics">Basics of Python</a></li> <li>3.<a href="#variables">Variables and Data Types</a></li> <li>4.<a href="#control">Control Structures</a></li> <li>5.<a href="#functions">Functions</a></li> 
+            <li>6.<a href="#classes">Classes and Objects</a></li> <li>7.<a href="#modules">Modules and Packages</a></li> <li>8.<a href="#exceptions">Exceptions</a></li> <li>9.<a href="#fileio">File I/O</a></li>  <li>10.<a href="#advanced">Advanced Topics</a></li>
+        </ul>
+        </pre>
+    </nav>
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction to Python</h2>
+            <p>Python is a high-level, general-purpose programming language known for its simplicity and readability. It was created by Guido van Rossum and first released in 1991. Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming.</p>
+        </section>
+
+        <section id="basics">
+            <h2>Basic Structure of Python Program</h2>
+            <p>A Python program typically consists of the following parts:</p>
+            <ol>
+                <li><strong>Import Statements:</strong> Includes necessary modules.</li>
+                <li><strong>Function Definitions:</strong> Defines reusable blocks of code.</li>
+                <li><strong>Main Code:</strong> Contains the main logic of the program.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Example: Hello World Program</h2>
+            <pre><code>print("Hello, World!")</code></pre>
+            <p>This program prints "Hello, World!" to the console.</p>
+        </section>
+
+        <section>
+            <h2>Explanation</h2>
+            <ul>
+                <li><code>print("Hello, World!")</code>: Outputs "Hello, World!" to the console.</li>
+            </ul>
+        </section>
+
+        <section id="variables">
+            <h2>Variables and Data Types</h2>
+            <p>In Python, a variable is a named location that holds a value. Variables do not need explicit declaration to reserve memory space. The declaration happens automatically when a value is assigned to a variable. Here are some key points:</p>
+            <ul>
+                <li><strong>Assignment:</strong> Variables are assigned values using the <code>=</code> operator.</li>
+                <li><strong>Types:</strong> Python supports various data types such as int, float, str, bool, etc.</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>age = 25
+height = 1.75
+grade = 'A'
+is_student = True
+
+# Output variables
+print("Age:", age)
+print("Height:", height, "meters")
+print("Grade:", grade)
+print("Is student:", is_student)</code></pre>
+            <p>This program declares and initializes variables of different data types and outputs their values.</p>
+        </section>
+
+        <section id="control">
+            <h2>Control Structures</h2>
+            <section id="ifstatement">
+                <h2>If Statement</h2>
+                <p>The <code>if</code> statement executes a block of code if a specified condition is true.</p>
+                <pre><code>num = 10
+
+if num > 0:
+    print("Number is positive")</code></pre>
+                <p>This program checks if a number is positive and prints a message accordingly.</p>
+            </section>
+
+            <section id="ifelsestatement">
+                <h2>If-Else Statement</h2>
+                <p>The <code>if-else</code> statement executes one block of code if a condition is true and another block if the condition is false.</p>
+                <pre><code>num = -5
+
+if num > 0:
+    print("Number is positive")
+else:
+    print("Number is not positive")</code></pre>
+                <p>This program checks if a number is positive or not and prints the respective message.</p>
+            </section>
+
+            <section id="forloop">
+                <h2>For Loop</h2>
+                <p>The <code>for</code> loop in Python is used to iterate over a sequence (such as a list, tuple, string, or range).</p>
+                <pre><code>for i in range(1, 6):
+    print(i, end=' ')
+print()</code></pre>
+                <p>This program uses a <code>for</code> loop to print numbers from 1 to 5.</p>
+            </section>
+
+            <section id="whileloop">
+                <h2>While Loop</h2>
+                <p>The <code>while</code> loop in Python is used to execute a block of code as long as a condition is true.</p>
+                <pre><code>num = 1
+
+while num <= 5:
+    print(num, end=' ')
+    num += 1
+print()</code></pre>
+                <p>This program uses a <code>while</code> loop to print numbers from 1 to 5.</p>
+            </section>
+        </section>
+
+        <section id="functions">
+            <h2>Functions</h2>
+            <section id="functiondefinition">
+                <h2>Function Definition</h2>
+                <p>A function in Python is defined using the <code>def</code> keyword:</p>
+                <pre><code>def greet():
+    print("Hello, World!")</code></pre>
+                <p>Example:</p>
+                <pre><code>def greet():
+    print("Hello, World!")
+
+greet()</code></pre>
+                <p>This program defines a function <code>greet()</code> that prints "Hello, World!" when called.</p>
+            </section>
+
+            <section id="functionparameters">
+                <h2>Function Parameters</h2>
+                <p>Functions can accept parameters to receive data from the caller:</p>
+                <pre><code>def display(num):
+    print("Number:", num)
+
+display(5)</code></pre>
+                <p>This program defines a function <code>display(num)</code> that prints the value of <code>num</code> passed as an argument.</p>
+            </section>
+
+            <section id="functionreturn">
+                <h2>Return Types</h2>
+                <p>Functions can return a value to the caller using a return statement:</p>
+                <pre><code>def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print("Sum:", result)</code></pre>
+                <p>This program defines a function <code>add(a, b)</code> that returns the sum of <code>a</code> and <code>b</code>.</p>
+            </section>
+        </section>
+
+        <section id="classes">
+            <h2>Classes and Objects</h2>
+            <section id="classdeclaration">
+                <h2>Class Declaration</h2>
+                <p>A class in Python is a blueprint for creating objects. It encapsulates data (attributes) and methods (functions) that operate on the data:</p>
+                <pre><code>class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+    def display_info(self):
+        print(f"Brand: {self.brand}, Year: {self.year}")</code></pre>
+                <p>Example:</p>
+                <pre><code>class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+    def display_info(self):
+        print(f"Brand: {self.brand}, Year: {self.year}")
+
+my_car = Car("Toyota", 2022)
+my_car.display_info()</code></pre>
+                <p>This program defines a class <code>Car</code> with attributes <code>brand</code> and <code>year</code>, and a method <code>display_info()</code> to print the car's details.</p>
+            </section>
+        </section>
+
+        <section id="modules">
+            <h2>Modules and Packages</h2>
+            <p>Python modules are files containing Python code. This code can either be function classes or variables. A Python package is a directory of such modules:</p>
+            <ul>
+                <li><strong>Importing a module:</strong> <code>import module_name</code></li>
+                <li><strong>Importing a specific function:</strong> <code>from module_name import function_name</code></li>
+            </ul>
+            <p>Example:</p>
+            <pre><code># math module
+import math
+
+print("Square root of 16:", math.sqrt(16))</code></pre>
+            <p>This program imports the <code>math</code> module and uses its <code>sqrt</code> function to compute the square root of 16.</p>
+        </section>
+
+        <section id="exceptions">
+            <h2>Exceptions</h2>
+            <p>Exceptions are errors detected during execution. In Python, exceptions are handled using <code>try</code> and <code>except</code> blocks:</p>
+            <pre><code>try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Error: Division by zero")
+except ValueError:
+    print("Error: Invalid input")</code></pre>
+            <p>This program handles division by zero and invalid input errors.</p>
+        </section>
+
+        <section id="fileio">
+            <h2>File I/O</h2>
+            <p>Python provides functions to handle file input and output operations:</p>
+            <pre><code># Writing to a file
+with open("output.txt", "w") as file:
+    file.write("Hello, World!")
+
+# Reading from a file
+with open("output.txt", "r") as file:
+    content = file.read()
+    print(content)</code></pre>
+            <p>This program writes "Hello, World!" to a file named <code>output.txt</code> and then reads and prints its content.</p>
+        </section>
+
+        <section id="advanced">
+            <h2>Advanced Topics</h2>
+            <p>Python has many advanced topics such as:</p>
+            <ul>
+                <li><strong>Decorators:</strong> Functions that modify the behavior of other functions.</li>
+                <section id="decorators">
+                    <h2>Decorators in Python</h2>
+                    <p>Decorators are a powerful and useful tool in Python that allow you to modify the behavior of a function or method. They are often used for logging, enforcing access control and authentication, instrumentation, and caching.</p>
+                    
+                    <h3>Basic Syntax</h3>
+                    <p>A decorator is a function that takes another function and extends its behavior without explicitly modifying it. The basic syntax is:</p>
+                    <pre><code>def decorator_function(original_function):
+                    def wrapper_function():
+                        # Code before the original function call
+                        result = original_function()
+                        # Code after the original function call
+                        return result
+                    return wrapper_function</code></pre>
+                    <p>You can apply the decorator to a function using the <code>@decorator_function</code> syntax.</p>
+                    
+                    <h3>Example: Simple Decorator</h3>
+                    <pre><code>def my_decorator(func):
+                    def wrapper():
+                        print("Something is happening before the function is called.")
+                        func()
+                        print("Something is happening after the function is called.")
+                    return wrapper
+                
+                @my_decorator
+                def say_hello():
+                    print("Hello!")
+                
+                say_hello()</code></pre>
+                    <p>Output:</p>
+                    <pre><code>Something is happening before the function is called.
+                Hello!
+                Something is happening after the function is called.</code></pre>
+                    
+                    <h3>Decorator with Arguments</h3>
+                    <p>Decorators can also accept arguments:</p>
+                    <pre><code>def repeat(num_times):
+                    def decorator_repeat(func):
+                        def wrapper(*args, **kwargs):
+                            for _ in range(num_times):
+                                func(*args, **kwargs)
+                        return wrapper
+                    return decorator_repeat
+                
+                @repeat(num_times=3)
+                def greet(name):
+                    print(f"Hello, {name}!")
+                
+                greet("Alice")</code></pre>
+                    <p>Output:</p>
+                    <pre><code>Hello, Alice!
+                Hello, Alice!
+                Hello, Alice!</code></pre>
+                    
+                    <h3>Chaining Decorators</h3>
+                    <p>Multiple decorators can be applied to a single function by stacking them:</p>
+                    <pre><code>def uppercase_decorator(func):
+                    def wrapper(*args, **kwargs):
+                        result = func(*args, **kwargs)
+                        return result.upper()
+                    return wrapper
+                
+                def say_hello_decorator(func):
+                    def wrapper(*args, **kwargs):
+                        return f"Hello, {func(*args, **kwargs)}"
+                    return wrapper
+                
+                @uppercase_decorator
+                @say_hello_decorator
+                def get_name(name):
+                    return name
+                
+                print(get_name("Alice"))</code></pre>
+                    <p>Output:</p>
+                    <pre><code>HELLO, ALICE</code></pre>
+                    
+                    <h3>Class Decorators</h3>
+                    <p>Decorators can also be applied to classes:</p>
+                    <pre><code>class CountCalls:
+                    def __init__(self, func):
+                        self.func = func
+                        self.num_calls = 0
+                
+                    def __call__(self, *args, **kwargs):
+                        self.num_calls += 1
+                        print(f"Call {self.num_calls} of {self.func.__name__!r}")
+                        return self.func(*args, **kwargs)
+                
+                @CountCalls
+                def say_hello():
+                    print("Hello!")
+                
+                say_hello()
+                say_hello()</code></pre>
+                    <p>Output:</p>
+                    <pre><code>Call 1 of 'say_hello'
+                Hello!
+                Call 2 of 'say_hello'
+                Hello!</code></pre>
+                    
+                    <h3>Practical Examples</h3>
+                    <h4>Logging with Decorators</h4>
+                    <pre><code>def log_decorator(func):
+                    def wrapper(*args, **kwargs):
+                        print(f"Calling function {func.__name__}")
+                        result = func(*args, **kwargs)
+                        print(f"Function {func.__name__} finished")
+                        return result
+                    return wrapper
+                
+                @log_decorator
+                def add(a, b):
+                    return a + b
+                
+                print(add(5, 3))</code></pre>
+                    <p>Output:</p>
+                    <pre><code>Calling function add
+                Function add finished
+                8</code></pre>
+                    
+                    <h4>Timing Functions with Decorators</h4>
+                    <pre><code>import time
+                
+                def timer_decorator(func):
+                    def wrapper(*args, **kwargs):
+                        start_time = time.time()
+                        result = func(*args, **kwargs)
+                        end_time = time.time()
+                        print(f"Function {func.__name__} took {end_time - start_time} seconds")
+                        return result
+                    return wrapper
+                
+                @timer_decorator
+                def slow_function():
+                    time.sleep(2)
+                    return "Finished"
+                
+                print(slow_function())</code></pre>
+                    <p>Output:</p>
+                    <pre><code>Function slow_function took 2.000123456 seconds
+                Finished</code></pre>
+                </section>
+                
+                <li><strong>Generators:</strong> Functions that return an iterable set of items, one at a time, in a special way.</li>
+                <section id="generators">
+                    <h2>Generators in Python</h2>
+                    <p>Generators are a special class of functions that simplify the task of writing iterators. They allow you to declare a function that behaves like an iterator, i.e., it can be used in a <code>for</code> loop.</p>
+                
+                    <h3>Basic Syntax</h3>
+                    <p>A generator function is defined like a normal function but uses the <code>yield</code> statement to return data. Each time the generator's <code>__next__()</code> method is called, the function resumes execution from where it last left off. Here's the basic syntax:</p>
+                    <pre><code>def generator_function():
+                    yield value</code></pre>
+                
+                    <h3>Example: Simple Generator</h3>
+                    <p>This example demonstrates a simple generator function that yields numbers from 1 to 3:</p>
+                    <pre><code>def simple_generator():
+                    yield 1
+                    yield 2
+                    yield 3
+                
+                for value in simple_generator():
+                    print(value)</code></pre>
+                    <p>Output:</p>
+                    <pre><code>1
+                2
+                3</code></pre>
+                
+                    <h3>Using <code>next()</code> with Generators</h3>
+                    <p>You can also use the <code>next()</code> function to manually iterate through the values yielded by a generator:</p>
+                    <pre><code>gen = simple_generator()
+                
+                print(next(gen))  # Output: 1
+                print(next(gen))  # Output: 2
+                print(next(gen))  # Output: 3
+                # print(next(gen))  # Raises StopIteration</code></pre>
+                
+                    <h3>Generator Expressions</h3>
+                    <p>Generator expressions provide an easier way to create generators. They are similar to list comprehensions but use parentheses instead of square brackets:</p>
+                    <pre><code>gen_exp = (x * x for x in range(3))
+                
+                for value in gen_exp:
+                    print(value)</code></pre>
+                    <p>Output:</p>
+                    <pre><code>0
+                1
+                4</code></pre>
+                
+                    <h3>Example: Fibonacci Sequence</h3>
+                    <p>Generators are particularly useful for working with large datasets or streams of data. Here is an example of a generator function to generate an infinite sequence of Fibonacci numbers:</p>
+                    <pre><code>def fibonacci_generator():
+                    a, b = 0, 1
+                    while True:
+                        yield a
+                        a, b = b, a + b
+                
+                fib_gen = fibonacci_generator()
+                
+                for _ in range(10):
+                    print(next(fib_gen))</code></pre>
+                    <p>Output:</p>
+                    <pre><code>0
+                1
+                1
+                2
+                3
+                5
+                8
+                13
+                21
+                34</code></pre>
+                
+                    <h3>Example: Reading Large Files</h3>
+                    <p>Generators can also be used to read large files efficiently:</p>
+                    <pre><code>def read_large_file(file_path):
+                    with open(file_path, "r") as file:
+                        for line in file:
+                            yield line
+                
+                for line in read_large_file("large_file.txt"):
+                    print(line, end='')</code></pre>
+                
+                    <h3>Comparison with Iterators</h3>
+                    <p>Generators are a simple way to create iterators. All generator functions are iterators, but not all iterators are generators. Generators simplify the creation of iterators using the <code>yield</code> keyword:</p>
+                    <ul>
+                        <li>Generators are written using normal function syntax.</li>
+                        <li>They use the <code>yield</code> keyword instead of <code>return</code>.</li>
+                        <li>Generator functions automatically create the <code>__iter__()</code> and <code>__next__()</code> methods.</li>
+                    </ul>
+                
+                    <h3>Example: Generator for Prime Numbers</h3>
+                    <p>This example demonstrates a generator that yields an infinite sequence of prime numbers:</p>
+                    <pre><code>def is_prime(num):
+                    if num < 2:
+                        return False
+                    for i in range(2, int(num ** 0.5) + 1):
+                        if num % i == 0:
+                            return False
+                    return True
+                
+                def prime_generator():
+                    num = 2
+                    while True:
+                        if is_prime(num):
+                            yield num
+                        num += 1
+                
+                prime_gen = prime_generator()
+                
+                for _ in range(10):
+                    print(next(prime_gen))</code></pre>
+                    <p>Output:</p>
+                    <pre><code>2
+                3
+                5
+                7
+                11
+                13
+                17
+                19
+                23
+                29</code></pre>
+                </section>
+                
+                <li><strong>Context Managers:</strong> Facilitate resource management (e.g., opening and closing files).</li>
+                <p>Context Managers in Python are a way to manage resources, such as files or network connections, using the <code>with</code> statement. They are used to ensure that resources are properly cleaned up after their use, even if an error occurs during the execution.</p>
+
+    <h2>Syntax</h2>
+    <p>The syntax of a context manager involves the <code>with</code> statement followed by an instance of a context manager class or a function that returns a context manager object.</p>
+    <pre><code>with context_manager as variable:
+    # Code block where the resource is used
+    # The resource is automatically cleaned up after this block
+</code></pre>
+
+    <h2>Using Context Managers with Files</h2>
+    <p>One common use of context managers is in file handling. The <code>open</code> function returns a file object that acts as a context manager. Here’s an example:</p>
+    <pre><code>with open('example.txt', 'w') as file:
+    file.write('Hello, World!')
+</code></pre>
+    <p>In this example, the file <code>example.txt</code> is opened for writing, and the context manager ensures that the file is properly closed after the block of code is executed.</p>
+
+    <h2>Custom Context Managers</h2>
+    <p>You can create your own context managers by defining a class with <code>__enter__</code> and <code>__exit__</code> methods:</p>
+    <pre><code>class MyContextManager:
+    def __enter__(self):
+        # Code to set up the context
+        print('Entering the context')
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        # Code to clean up the context
+        print('Exiting the context')
+        return False  # Propagate any exceptions
+
+# Using the custom context manager
+with MyContextManager() as manager:
+    print('Inside the context')
+</code></pre>
+    <p>In this example, <code>__enter__</code> is called when entering the context, and <code>__exit__</code> is called when exiting the context. The <code>__exit__</code> method can also handle exceptions if desired.</p>
+
+    <h2>Context Managers with the <code>contextlib</code> Module</h2>
+    <p>The <code>contextlib</code> module provides utilities for working with context managers. One useful function is <code>contextmanager</code>, which allows you to create a context manager using a generator:</p>
+    <pre><code>from contextlib import contextmanager
+
+@contextmanager
+def my_context_manager():
+    print('Entering the context')
+    try:
+        yield
+    finally:
+        print('Exiting the context')
+
+# Using the context manager created with contextlib
+with my_context_manager():
+    print('Inside the context')
+</code></pre>
+    <p>In this example, <code>my_context_manager</code> is a generator-based context manager that prints messages when entering and exiting the context.</p>
+            </ul>
+            <center>
+                <p>  <a class="navlink" id="Home" onclick="window.location.href='index.html';">Home</a></p>
+            </center>
+            <br>
+            <br>
+        </section>
+        <br>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tech Titans. All Rights Reserved</p>
+    </footer>
+</body>
+</html>

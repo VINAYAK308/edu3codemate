@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c1e9f3;
+            text-align: center;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #a5cfda;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .navlink {
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+        }
+        
+        .navlink:hover {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Python MCQ Quiz</h2>
+        <div id="quiz"></div>
+        <button onclick="showScore()">Submit</button>
+        <center>
+            <p>  <a class="navlink" id="Home" onclick="window.location.href='index.html';">Home</a></p>
+        </center>
+        
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Which keyword is used to define a function in Python?",
+                options: ["def", "function", "define", "func"],
+                answer: "def"
+            },
+            {
+                question: "What is the output of the following Python code?\n\n```python\nx = 5\ny = 2\nprint(x ** y)\n```",
+                options: ["10", "7", "25", "Error"],
+                answer: "25"
+            },
+            {
+                question: "Which of the following is not a valid variable name in Python?",
+                options: ["my_var", "_var", "2var", "myVar"],
+                answer: "2var"
+            },
+            {
+                question: "In Python, how do you convert a string `num_str` containing a number to an integer?",
+                options: ["int(num_str)", "convert(num_str)", "to_int(num_str)", "num_str.toInt()"],
+                answer: "int(num_str)"
+            },
+            {
+                question: "What does the following Python code snippet do?\n\n```python\nnums = [1, 2, 3, 4, 5]\nprint(nums[2])\n```",
+                options: ["Prints the third element", "Prints the sum of elements", "Prints all elements", "Prints the first element"],
+                answer: "Prints the third element"
+            },
+            {
+                question: "Which Python keyword is used to exit a loop prematurely?",
+                options: ["end", "break", "continue", "exit"],
+                answer: "break"
+            },
+            {
+                question: "In Python, what is the result of `5 / 2`?",
+                options: ["2.5", "2", "2.0", "2.25"],
+                answer: "2.5"
+            },
+            {
+                question: "Which of the following is used to add a comment in Python?",
+                options: ["// This is a comment", "/* This is a comment */", "<!-- This is a comment -->", "# This is a comment"],
+                answer: "# This is a comment"
+            },
+            {
+                question: "What does the `range()` function in Python return?",
+                options: ["A list of numbers", "A tuple of numbers", "An iterator of numbers", "A dictionary of numbers"],
+                answer: "An iterator of numbers"
+            },
+            {
+                question: "Which Python data type is ordered and immutable?",
+                options: ["List", "Tuple", "Set", "Dictionary"],
+                answer: "Tuple"
+            }
+            // Add more questions as needed
+        ];
+
+        function loadQuestions() {
+            const quizContainer = document.getElementById('quiz');
+            let quizHTML = '';
+
+            questions.forEach((question, index) => {
+                quizHTML += `<div class="question">
+                                <p>${index + 1}. ${question.question}</p>
+                                <div class="options">`;
+                question.options.forEach(option => {
+                    quizHTML += `<label>
+                                    <input type="radio" name="question${index}" value="${option}">
+                                    ${option}
+                                </label>`;
+                });
+                quizHTML += `</div></div>`;
+            });
+
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        function showScore() {
+            const correctAnswers = questions.map(question => question.answer);
+            let score = 0;
+
+            questions.forEach((question, index) => {
+                const selectedOption = document.querySelector(`input[name=question${index}]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === question.answer) {
+                        score++;
+                    }
+                }
+            });
+
+            alert(`Your score is ${score}/${questions.length}`);
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>

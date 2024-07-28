@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d1d4f9;
+            text-align: center;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #a8abcc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .navlink {
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px 0;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+}
+
+.navlink:hover {
+    background-color: #0056b3;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Java MCQ Quiz</h2>
+        <div id="quiz"></div>
+        <button onclick="showScore()">Submit</button>
+        <center>
+            <p>  <a class="navlink" id="Home" onclick="window.location.href='index.html';">Home</a></p>
+        </center>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Which keyword is used to define a class in Java?",
+                options: ["class", "void", "int", "String"],
+                answer: "class"
+            },
+            {
+                question: "What is the output of the following Java code?\n\n```java\nint x = 5;\nint y = 2;\nSystem.out.println(x + y);\n```",
+                options: ["7", "52", "5+2", "Error"],
+                answer: "7"
+            },
+            {
+                question: "Which of the following is a valid method signature in Java?",
+                options: ["public static void main(String[] args)", "void main()", "int main()", "public static int main(String args)"],
+                answer: "public static void main(String[] args)"
+            },
+            {
+                question: "What is the result of `5 / 2` in Java?",
+                options: ["2.5", "2", "2.0", "2.25"],
+                answer: "2"
+            },
+            {
+                question: "In Java, how do you declare a constant variable?",
+                options: ["const int num = 5;", "constant int num = 5;", "final int num = 5;", "int num = const 5;"],
+                answer: "final int num = 5;"
+            },
+            {
+                question: "What does the following Java code snippet do?\n\n```java\nString str = \"Hello World!\";\nSystem.out.println(str.length());\n```",
+                options: ["Prints the length of the string", "Prints the string in uppercase", "Prints the string in lowercase", "Prints the first character of the string"],
+                answer: "Prints the length of the string"
+            },
+            {
+                question: "Which Java keyword is used to exit a loop prematurely?",
+                options: ["end", "break", "continue", "exit"],
+                answer: "break"
+            },
+            {
+                question: "In Java, what is the purpose of the `static` keyword?",
+                options: ["Make the method accessible from other classes", "Create an instance of a class", "Allocate memory dynamically", "Declare a constant variable"],
+                answer: "Make the method accessible from other classes"
+            },
+            {
+                question: "Which Java operator is used to concatenate strings?",
+                options: ["+", "&", "++", "||"],
+                answer: "+"
+            },
+            {
+                question: "What does the `super` keyword refer to in Java?",
+                options: ["The superclass object", "The subclass object", "A static method", "A final method"],
+                answer: "The superclass object"
+            }
+            // Add more questions as needed
+        ];
+
+        function loadQuestions() {
+            const quizContainer = document.getElementById('quiz');
+            let quizHTML = '';
+
+            questions.forEach((question, index) => {
+                quizHTML += `<div class="question">
+                                <p>${index + 1}. ${question.question}</p>
+                                <div class="options">`;
+                question.options.forEach(option => {
+                    quizHTML += `<label>
+                                    <input type="radio" name="question${index}" value="${option}">
+                                    ${option}
+                                </label>`;
+                });
+                quizHTML += `</div></div>`;
+            });
+
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        function showScore() {
+            const correctAnswers = questions.map(question => question.answer);
+            let score = 0;
+
+            questions.forEach((question, index) => {
+                const selectedOption = document.querySelector(`input[name=question${index}]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === question.answer) {
+                        score++;
+                    }
+                }
+            });
+
+            alert(`Your score is ${score}/${questions.length}`);
+        }
+
+        loadQuestions();
+    </script>
+</body>
+</html>

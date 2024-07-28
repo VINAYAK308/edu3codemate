@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Puzzle Game</title>
+    <link rel="stylesheet" href="JGame.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Java Puzzle Game</h1>
+        <div id="puzzle-container">
+            <div class="puzzle" id="puzzle1">
+                <p>What will be the output of the following code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle2" style="display:none;">
+                <p>What does this code do?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 10;
+        System.out.println(a + b);
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle3" style="display:none;">
+                <p>Find the output of this program:</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 3;
+        System.out.println(a * a);
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle4" style="display:none;">
+                <p>What is the result of the following code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int x = 7;
+        x++;
+        System.out.println(x);
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle5" style="display:none;">
+                <p>What will be the output of this code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 4;
+        System.out.println(a / 2);
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle6" style="display:none;">
+                <p>What is the output of the following program?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        System.out.println(a + b - 5);
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle7" style="display:none;">
+                <p>What does this code print?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        System.out.println(a * 2);
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle8" style="display:none;">
+                <p>What will be the output of this code?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 9;
+        System.out.println(a % 4);
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle9" style="display:none;">
+                <p>Find the output of this code snippet:</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 8;
+        System.out.println(--a);
+    }
+}
+                </code></pre>
+            </div>
+            <div class="puzzle" id="puzzle10" style="display:none;">
+                <p>What will this code output?</p>
+                <pre><code>public class Main {
+    public static void main(String[] args) {
+        int a = 6;
+        System.out.println(a + 5);
+    }
+}
+                </code></pre>
+            </div>
+            <textarea id="answer" placeholder="Type your answer here..."></textarea>
+            <button id="submitButton" onclick="checkAnswer()">Submit</button>
+            <button id="prevButton" onclick="previousPuzzle()">Previous</button>
+            <button id="nextButton" onclick="nextPuzzle()">Next</button>
+            <center>
+                <p><a class="navlink" id="Home" onclick="window.location.href='index.html';">Home</a></p>
+            </center>
+        </div>
+        <p id="feedback"></p>
+    </div>
+    <script src="JGame.js"></script>
+</body>
+</html>

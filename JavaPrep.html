@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Topics of Java</title>
+    <link rel="stylesheet" href="JavaPrep.css">
+</head>
+<body>
+    <header>
+        <h1>Fundamental Topics of Java</h1>
+    </header>
+
+    <nav>
+        <pre>
+        <ul>
+            <li>1.<a href="#introduction">Introduction</a></li> <li>2.<a href="#basics">Basics of Java</a></li> <li>3.<a href="#variables">Variables and Data Types</a></li> <li>4.<a href="#control">Control Structures</a></li> <li>5.<a href="#functions">Methods</a></li> <li>6.<a href="#classes">Classes and Objects</a></li>
+            <br>            <li>7.<a href="#exceptions">Exceptions</a></li>  <li>8.<a href="#fileio">File I/O</a></li> <li>9.<a href="#advanced">Advanced Topics</a></li>
+        </ul>
+        </pre>
+    </nav>
+
+    <main>
+        <section class="introduction" id="introduction">
+            <h2>Introduction to Java</h2>
+            <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let application developers write once, run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.</p>
+        </section>
+
+        <section id="basics">
+            <h2>Basics Structure of Java Program</h2>
+            <p>A Java program typically consists of the following parts:</p>
+            <ol>
+                <li><strong>Package Declaration:</strong> Defines the package to which the class belongs.</li>
+                <li><strong>Import Statements:</strong> Imports other Java packages or classes.</li>
+                <li><strong>Class Declaration:</strong> Defines a class.</li>
+                <li><strong>Main Method:</strong> Entry point of the program.</li>
+                <li><strong>Statements:</strong> Actual code statements.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Example: Hello World Program</h2>
+            <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+            <p>This program prints "Hello, World!" to the console.</p>
+        </section>
+
+        <section>
+            <h2>Explanation</h2>
+            <ul>
+                <li><code>public class HelloWorld</code>: Declares a public class named HelloWorld.</li>
+                <li><code>public static void main(String[] args)</code>: The main method where the program execution begins.</li>
+                <li><code>System.out.println("Hello, World!");</code>: Outputs "Hello, World!" followed by a newline to the console.</li>
+            </ul>
+        </section>
+
+        <section id="variables">
+            <h2>Variables and Data Types</h2>
+            <p>In Java, a variable is a named storage location that holds a value of a specific data type. Variables must be declared before they can be used. Here are some key points:</p>
+            <ul>
+                <li><strong>Declaration:</strong> Variables are declared with a data type followed by a name.</li>
+                <li><strong>Initialization:</strong> Variables can be initialized (assigned an initial value) at the time of declaration.</li>
+                <li><strong>Scope:</strong> Variables have a scope that determines where they can be accessed.</li>
+                <li><strong>Types:</strong> Java supports various data types such as int, float, double, char, boolean, etc.</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>public class VariableExample {
+    public static void main(String[] args) {
+        // Variable declaration and initialization
+        int age = 25;
+        double height = 1.75;
+        char grade = 'A';
+        boolean isStudent = true;
+
+        // Output variables
+        System.out.println("Age: " + age);
+        System.out.println("Height: " + height + " meters");
+        System.out.println("Grade: " + grade);
+        System.out.println("Is student: " + (isStudent ? "Yes" : "No"));
+    }
+}</code></pre>
+            <p>This program declares and initializes variables of different data types and outputs their values.</p>
+        </section>
+
+        <section id="control">
+            <h2>Control Structures</h2>
+            <section id="ifstatement">
+                <h2>If Statement</h2>
+                <p>The <code>if</code> statement executes a block of code if a specified condition is true.</p>
+                <pre><code>public class IfExample {
+    public static void main(String[] args) {
+        int num = 10;
+
+        // If statement
+        if (num > 0) {
+            System.out.println("Number is positive");
+        }
+    }
+}</code></pre>
+                <p>This program checks if a number is positive and prints a message accordingly.</p>
+            </section>
+
+            <section id="ifelsestatement">
+                <h2>If-Else Statement</h2>
+                <p>The <code>if-else</code> statement executes one block of code if a condition is true and another block if the condition is false.</p>
+                <pre><code>public class IfElseExample {
+    public static void main(String[] args) {
+        int num = -5;
+
+        // If-Else statement
+        if (num > 0) {
+            System.out.println("Number is positive");
+        } else {
+            System.out.println("Number is not positive");
+        }
+    }
+}</code></pre>
+                <p>This program checks if a number is positive or not and prints the respective message.</p>
+            </section>
+
+            <section id="switchstatement">
+                <h2>Switch Statement</h2>
+                <p>The <code>switch</code> statement allows a variable to be tested for equality against a list of values.</p>
+                <pre><code>public class SwitchExample {
+    public static void main(String[] args) {
+        int choice = 2;
+
+        // Switch statement
+        switch (choice) {
+            case 1:
+                System.out.println("Choice is 1");
+                break;
+            case 2:
+                System.out.println("Choice is 2");
+                break;
+            case 3:
+                System.out.println("Choice is 3");
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+    }
+}</code></pre>
+                <p>This program demonstrates a switch statement based on the value of the variable <code>choice</code>.</p>
+            </section>
+
+            <section id="loops">
+                <h2>Loops</h2>
+                <p>Java supports three types of loops: <code>for</code>, <code>while</code>, and <code>do-while</code>.</p>
+                <h3>For Loop</h3>
+                <pre><code>public class ForLoopExample {
+    public static void main(String[] args) {
+        // For loop example
+        for (int i = 1; i <= 5; ++i) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}</code></pre>
+                <p>This program uses a <code>for</code> loop to print numbers from 1 to 5.</p>
+
+                <h3>While Loop</h3>
+                <pre><code>public class WhileLoopExample {
+    public static void main(String[] args) {
+        int num = 1;
+
+        // While loop example
+        while (num <= 5) {
+            System.out.print(num + " ");
+            ++num;
+        }
+        System.out.println();
+    }
+}</code></pre>
+                <p>This program uses a <code>while</code> loop to print numbers from 1 to 5.</p>
+
+                <h3>Do-While Loop</h3>
+                <pre><code>public class DoWhileLoopExample {
+    public static void main(String[] args) {
+        int num = 1;
+
+        // Do-While loop example
+        do {
+            System.out.print(num + " ");
+            ++num;
+        } while (num <= 5);
+        System.out.println();
+    }
+}</code></pre>
+                <p>This program uses a <code>do-while</code> loop to print numbers from 1 to 5.</p>
+            </section>
+        </section>
+
+        <section id="functions">
+            <h2>Methods</h2>
+            <section id="methoddeclaration">
+                <h2>Method Declaration</h2>
+                <p>A method in Java is a block of code that performs a specific task. It consists of a method header and a method body:</p>
+                <pre><code>return_type method_name(parameters) {
+    // Method body
+}</code></pre>
+                <p>Example:</p>
+                <pre><code>public class MethodExample {
+    // Method declaration
+    static void greet() {
+        System.out.println("Hello, welcome to Java!");
+    }
+
+    public static void main(String[] args) {
+        // Method call
+        greet();
+    }
+}</code></pre>
+                <p>This program defines and calls a method named <code>greet</code> that prints a greeting message.</p>
+            </section>
+
+            <section id="parameters">
+                <h2>Parameters and Return Types</h2>
+                <p>Methods can accept parameters and return values:</p>
+                <pre><code>public class MethodExample {
+    // Method with parameters and return type
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        // Method call
+        int result = add(5, 3);
+        System.out.println("Sum: " + result);
+    }
+}</code></pre>
+                <p>This program defines a method <code>add</code> that accepts two integers, adds them, and returns the sum.</p>
+            </section>
+        </section>
+
+        <section id="classes">
+            <h2>Classes and Objects</h2>
+            <section id="classdeclaration">
+                <h2>Class Declaration</h2>
+                <p>A class is a blueprint for creating objects. It contains fields (variables) and methods to define the behavior of objects:</p>
+                <pre><code>class ClassName {
+    // Fields
+    // Methods
+}</code></pre>
+                <p>Example:</p>
+                <pre><code>public class Person {
+    // Fields
+    String name;
+    int age;
+
+    // Method
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Create an object
+        Person p = new Person();
+
+        // Initialize fields
+        p.name = "John";
+        p.age = 30;
+
+        // Call method
+        p.display();
+    }
+}</code></pre>
+                <p>This program defines a <code>Person</code> class with fields <code>name</code> and <code>age</code>, and a method <code>display</code> to print the values.</p>
+            </section>
+
+            <section id="constructors">
+                <h2>Constructors</h2>
+                <p>A constructor is a special method that is called when an object is instantiated. It is used to initialize the object's state:</p>
+                <pre><code>class ClassName {
+    // Constructor
+    ClassName() {
+        // Initialization code
+    }
+}</code></pre>
+                <p>Example:</p>
+                <pre><code>public class Person {
+    String name;
+    int age;
+
+    // Constructor
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Create an object using constructor
+        Person p = new Person("John", 30);
+
+        // Call method
+        p.display();
+    }
+}</code></pre>
+                <p>This program defines a constructor for the <code>Person</code> class to initialize the fields.</p>
+            </section>
+
+            <section id="inheritance">
+                <h2>Inheritance</h2>
+                <p>Inheritance allows a class to inherit properties and behavior from another class:</p>
+                <pre><code>class BaseClass {
+    // Fields and methods
+}
+
+class DerivedClass extends BaseClass {
+    // Additional fields and methods
+}</code></pre>
+                <p>Example:</p>
+                <pre><code>class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat(); // Inherited method
+        d.bark(); // Dog's own method
+    }
+}</code></pre>
+                <p>This program demonstrates inheritance where the <code>Dog</code> class inherits the <code>eat</code> method from the <code>Animal</code> class.</p>
+            </section>
+        </section>
+
+        <section id="exceptions">
+            <h2>Exceptions</h2>
+            <p>Exceptions are events that disrupt the normal flow of a program. Java provides a robust mechanism to handle exceptions:</p>
+            <section id="trycatch">
+                <h2>Try-Catch Block</h2>
+                <p>The <code>try-catch</code> block is used to handle exceptions:</p>
+                <pre><code>try {
+    // Code that may throw an exception
+} catch (ExceptionType e) {
+    // Handle exception
+}</code></pre>
+                <p>Example:</p>
+                <pre><code>public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException: " + e.getMessage());
+        }
+    }
+}</code></pre>
+                <p>This program demonstrates exception handling using a <code>try-catch</code> block to catch an <code>ArithmeticException</code>.</p>
+            </section>
+
+            <section id="finallyblock">
+                <h2>Finally Block</h2>
+                <p>The <code>finally</code> block contains code that is always executed, regardless of whether an exception is thrown:</p>
+                <pre><code>try {
+    // Code that may throw an exception
+} catch (ExceptionType e) {
+    // Handle exception
+} finally {
+    // Code that will always be executed
+}</code></pre>
+                <p>Example:</p>
+                <pre><code>public class FinallyExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException: " + e.getMessage());
+        } finally {
+            System.out.println("Finally block is always executed.");
+        }
+    }
+}</code></pre>
+                <p>This program demonstrates the use of a <code>finally</code> block, which is executed after the <code>try-catch</code> block.</p>
+            </section>
+
+            <section id="throwthrows">
+                <h2>Throw and Throws</h2>
+                <p>The <code>throw</code> keyword is used to explicitly throw an exception, while the <code>throws</code> keyword is used in method signatures to declare that a method may throw exceptions:</p>
+                <pre><code>class CustomException extends Exception {
+    CustomException(String message) {
+        super(message);
+    }
+}
+
+public class ThrowThrowsExample {
+    // Method declaring it may throw an exception
+    static void validate(int age) throws CustomException {
+        if (age < 18) {
+            throw new CustomException("Age is less than 18");
+        } else {
+            System.out.println("Age is valid");
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            validate(15);
+        } catch (CustomException e) {
+            System.out.println("CustomException: " + e.getMessage());
+        }
+    }
+}</code></pre>
+                <p>This program demonstrates the use of the <code>throw</code> and <code>throws</code> keywords with a custom exception.</p>
+            </section>
+        </section>
+
+        <section id="fileio">
+            <h2>File I/O</h2>
+            <p>Java provides a robust I/O package to handle input and output operations with files:</p>
+            <section id="filewrite">
+                <h2>Writing to a File</h2>
+                <p>The <code>FileWriter</code> class is used to write data to a file:</p>
+                <pre><code>import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriteExample {
+    public static void main(String[] args) {
+        try (FileWriter writer = new FileWriter("output.txt")) {
+            writer.write("Hello, FileWriter!");
+        } catch (IOException e) {
+            System.out.println("IOException: " + e.getMessage());
+        }
+    }
+}</code></pre>
+                <p>This program writes the text "Hello, FileWriter!" to a file named <code>output.txt</code>.</p>
+            </section>
+
+            <section id="fileread">
+                <h2>Reading from a File</h2>
+                <p>The <code>FileReader</code> class is used to read data from a file:</p>
+                <pre><code>import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReadExample {
+    public static void main(String[] args) {
+        try (FileReader reader = new FileReader("output.txt")) {
+            int character;
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);
+            }
+        } catch (IOException e) {
+            System.out.println("IOException: " + e.getMessage());
+        }
+    }
+}</code></pre>
+                <p>This program reads and prints the contents of the file named <code>output.txt</code>.</p>
+            </section>
+        </section>
+
+        <section id="advanced">
+            <h2>Advanced Topics</h2>
+            <section id="multithreading">
+                <h2>Multithreading</h2>
+                <p>Java supports multithreading, which allows concurrent execution of two or more threads:</p>
+                <pre><code>class MyThread extends Thread {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i + " " + Thread.currentThread().getName());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        MyThread t2 = new MyThread();
+        t1.start();
+        t2.start();
+    }
+}</code></pre>
+                <p>This program demonstrates the creation and execution of two threads that print numbers from 0 to 4.</p>
+            </section>
+
+            <section id="collections">
+                <h2>Collections</h2>
+                <p>Java provides a comprehensive set of collection classes for storing and manipulating groups of data:</p>
+                <pre><code>import java.util.ArrayList;
+import java.util.List;
+
+public class CollectionExample {
+    public static void main(String[] args) {
+        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+        list.add("Java");
+        list.add("Python");
+        list.add("C++");
+
+        for (String lang : list) {
+            System.out.println(lang);
+        }
+    }
+}</code></pre>
+                <p>This program demonstrates the use of an <code>ArrayList</code> to store and print a list of programming languages.</p>
+            </section>
+
+            <section id="lambda">
+                <h2>Lambda Expressions</h2>
+                <p>Lambda expressions in Java provide a clear and concise way to represent one method interface using an expression:</p>
+                <pre><code>import java.util.Arrays;
+import java.util.List;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        List&lt;String&gt; list = Arrays.asList("Java", "Python", "C++");
+
+        // Lambda expression
+        list.forEach(lang -> System.out.println(lang));
+    }
+}</code></pre>
+                <p>This program uses a lambda expression to print elements of a list.</p>
+
+                <center>
+                    <p>  <a class="navlink" id="Home" onclick="window.location.href='index.html';">Home</a></p>
+                </center>
+                <br>
+                <br>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Tech Titans. All Rights Reserved</p>
+    </footer>
+</body>
+</html>

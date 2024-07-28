@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Topics of C++</title>
+    <link rel="stylesheet" href="CppPrep.css">
+</head>
+<body>
+    <header>
+        <br>
+        <h1>Fundamental Topics of C++</h1>
+    </header>
+
+    
+    <nav>
+        
+         <pre>
+          <ol>
+            <li>1.<a href="#introduction">Introduction</a></li>  <li>2.<a href="#basics">Basics of C++</a></li> <li>3.<a href="#variables">Variables and Data Types</a></li> <li>4.<a href="#control">Control Structures</a></li> <li>5.<a href="#functions">Functions</a></li> <li>6.<a href="#classes">Classes and Objects</a></li>
+            <br>
+            <li>7.<a href="#pointers">Pointers</a></li> <li>8.<a href="#templates">Templates</a></li> <li>9.<a href="#stl">Standard Template Library (STL)</a></li> <li>10.<a href="#fileio">File I/O</a></li> <li>11.<a href="#advanced">Advanced Topics</a></li>
+          </ol>
+         </pre>
+
+        
+    </nav>
+    
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction to C++</h2>
+            <p>C++ is a high-level, general-purpose programming language designed for system and application programming. It was developed by Bjarne Stroustrup at Bell Labs in 1983 as an extension of the C programming language. C++ is an object-oriented, multi-paradigm language that supports procedural, functional, and generic programming styles</p>
+        </section>
+
+        <section id="basics">
+            <h2>Basics Structure of C++ Program</h2>
+            <p>A C++ program typically consists of the following parts:</p>
+            <ol>
+                <li><strong>Preprocessor Directives:</strong> Includes necessary libraries.</li>
+                <li><strong>Namespace Declaration:</strong> Specifies the namespace to use.</li>
+                <li><strong>Main Function:</strong> Entry point of the program.</li>
+                <li><strong>Statements:</strong> Actual code statements.</li>
+                <li><strong>Return Statement:</strong> Indicates the end of the program.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Example: Hello World Program</h2>
+            <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+// Main function
+int main() {
+    // Statements
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+
+    // Return statement
+    return 0;
+}</code></pre>
+            <p>This program prints "Hello, World!" to the console.</p>
+        </section>
+
+        <section>
+            <h2>Explanation</h2>
+            <ul>
+                <li><code>#include &lt;iostream&gt;</code>: Includes the input/output stream library for basic input and output operations.</li>
+                <li><code>using namespace std;</code>: Allows us to use names from the standard library without prefixing them with <code>std::</code>.</li>
+                <li><code>int main() { ... }</code>: The main function where execution of the program begins.</li>
+                <li><code>cout &lt;&lt; "Hello, World!" &lt;&lt; endl;</code>: Outputs "Hello, World!" followed by a newline to the console.</li>
+                <li><code>return 0;</code>: Indicates successful termination of the program.</li>
+            </ul>
+        </section>
+
+        <section id="variables">
+            <h2>Variables and Data Types</h2>
+            <p>In C++, a variable is a named storage location that holds a value of a specific data type. Variables must be declared before they can be used. Here are some key points:</p>
+            <ul>
+                <li><strong>Declaration:</strong> Variables are declared with a data type followed by a name.</li>
+                <li><strong>Initialization:</strong> Variables can be initialized (assigned an initial value) at the time of declaration.</li>
+                <li><strong>Scope:</strong> Variables have a scope that determines where they can be accessed.</li>
+                <li><strong>Types:</strong> C++ supports various data types such as int, float, double, char, bool, etc.</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // Variable declaration and initialization
+    int age = 25;
+    double height = 1.75;
+    char grade = 'A';
+    bool isStudent = true;
+
+    // Output variables
+    cout &lt;&lt; "Age: " &lt;&lt; age &lt;&lt; endl;
+    cout &lt;&lt; "Height: " &lt;&lt; height &lt;&lt; " meters" &lt;&lt; endl;
+    cout &lt;&lt; "Grade: " &lt;&lt; grade &lt;&lt; endl;
+    cout &lt;&lt; "Is student: " &lt;&lt; (isStudent ? "Yes" : "No") &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+            <p>This program declares and initializes variables of different data types and outputs their values.</p>
+        </section>
+
+        <section id="datatypes">
+            <h2>Data Types</h2>
+            <p>C++ supports several built-in data types, each with its own size and range:</p>
+            <ul>
+                <li><strong>Integer Types:</strong> `int`, `short`, `long`, `long long`, etc.</li>
+                <li><strong>Floating-point Types:</strong> `float`, `double`, `long double`.</li>
+                <li><strong>Character Types:</strong> `char`, `wchar_t`, `char16_t`, `char32_t`.</li>
+                <li><strong>Boolean Type:</strong> `bool` (true/false).</li>
+                <li><strong>Void Type:</strong> Represents the absence of type.</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int number = 10;
+    float pi = 3.14f;
+    char letter = 'A';
+    bool isCorrect = true;
+
+    // Output variables
+    cout &lt;&lt; "Number: " &lt;&lt; number &lt;&lt; endl;
+    cout &lt;&lt; "Pi: " &lt;&lt; pi &lt;&lt; endl;
+    cout &lt;&lt; "Letter: " &lt;&lt; letter &lt;&lt; endl;
+    cout &lt;&lt; "Is Correct: " &lt;&lt; (isCorrect ? "Yes" : "No") &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+            <p>This program demonstrates different data types and their usage.</p>
+        </section>
+
+        <section id="control">
+            <h2>Control Structures</h2>
+            <section id="ifstatement">
+                <h2>If Statement</h2>
+                <p>The <code>if</code> statement executes a block of code if a specified condition is true.</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int num = 10;
+    
+        // If statement
+        if (num > 0) {
+            cout &lt;&lt; "Number is positive" &lt;&lt; endl;
+        }
+    
+        return 0;
+    }</code></pre>
+                <p>This program checks if a number is positive and prints a message accordingly.</p>
+            </section>
+    
+            <section id="ifelsestatement">
+                <h2>If-Else Statement</h2>
+                <p>The <code>if-else</code> statement executes one block of code if a condition is true and another block if the condition is false.</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int num = -5;
+    
+        // If-Else statement
+        if (num > 0) {
+            cout &lt;&lt; "Number is positive" &lt;&lt; endl;
+        } else {
+            cout &lt;&lt; "Number is not positive" &lt;&lt; endl;
+        }
+    
+        return 0;
+    }</code></pre>
+                <p>This program checks if a number is positive or not and prints the respective message.</p>
+            </section>
+    
+            <section id="switchstatement">
+                <h2>Switch Statement</h2>
+                <p>The <code>switch</code> statement allows a variable to be tested for equality against a list of values.</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int choice = 2;
+    
+        // Switch statement
+        switch (choice) {
+            case 1:
+                cout &lt;&lt; "Choice is 1" &lt;&lt; endl;
+                break;
+            case 2:
+                cout &lt;&lt; "Choice is 2" &lt;&lt; endl;
+                break;
+            case 3:
+                cout &lt;&lt; "Choice is 3" &lt;&lt; endl;
+                break;
+            default:
+                cout &lt;&lt; "Invalid choice" &lt;&lt; endl;
+        }
+    
+        return 0;
+    }</code></pre>
+                <p>This program demonstrates a switch statement based on the value of the variable <code>choice</code>.</p>
+            </section>
+    
+            <section id="loops">
+                <h2>Loops</h2>
+                <p>C++ supports three types of loops: <code>for</code>, <code>while</code>, and <code>do-while</code>.</p>
+                <h3>For Loop</h3>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        // For loop example
+        for (int i = 1; i &lt;= 5; ++i) {
+            cout &lt;&lt; i &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    
+        return 0;
+    }</code></pre>
+                <p>This program uses a <code>for</code> loop to print numbers from 1 to 5.</p>
+    
+                <h3>While Loop</h3>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int num = 1;
+    
+        // While loop example
+        while (num &lt;= 5) {
+            cout &lt;&lt; num &lt;&lt; " ";
+            ++num;
+        }
+        cout &lt;&lt; endl;
+    
+        return 0;
+    }</code></pre>
+                <p>This program uses a <code>while</code> loop to print numbers from 1 to 5.</p>
+    
+                <h3>Do-While Loop</h3>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int num = 1;
+    
+        // Do-While loop example
+        do {
+            cout &lt;&lt; num &lt;&lt; " ";
+            ++num;
+        } while (num &lt;= 5);
+        cout &lt;&lt; endl;
+    
+        return 0;
+    }</code></pre>
+                <p>This program uses a <code>do-while</code> loop to print numbers from 1 to 5.</p>
+            </section>
+
+        </section>
+
+        <section id="functions">
+            <h2>Functions</h2>
+            <section id="functiondeclaration">
+                <h2>Function Declaration</h2>
+                <p>A function in C++ is a block of code that performs a specific task. It consists of a function header and a function body:</p>
+                <pre><code>return_type function_name(parameters);</code></pre>
+                <p>Example:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Function declaration
+    void greet();
+    
+    int main() {
+        // Function call
+        greet();
+    
+        return 0;
+    }
+    
+    // Function definition
+    void greet() {
+        cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    }</code></pre>
+                <p>This program defines a function <code>greet()</code> that prints "Hello, World!" when called from the <code>main()</code> function.</p>
+            </section>
+    
+            <section id="functiondefinition">
+                <h2>Function Definition</h2>
+                <p>A function definition provides the actual implementation of the function:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Function declaration
+    void greet();
+    
+    int main() {
+        // Function call
+        greet();
+    
+        return 0;
+    }
+    
+    // Function definition
+    void greet() {
+        cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    }</code></pre>
+                <p>This program defines and calls a function <code>greet()</code> that prints "Hello, World!".</p>
+            </section>
+    
+            <section id="functionparameters">
+                <h2>Function Parameters</h2>
+                <p>Functions can accept parameters to receive data from the caller:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Function declaration with parameters
+    void display(int num);
+    
+    int main() {
+        int number = 5;
+    
+        // Function call with argument
+        display(number);
+    
+        return 0;
+    }
+    
+    // Function definition
+    void display(int num) {
+        cout &lt;&lt; "Number: " &lt;&lt; num &lt;&lt; endl;
+    }</code></pre>
+                <p>This program defines a function <code>display(int num)</code> that prints the value of <code>num</code> passed as an argument.</p>
+            </section>
+    
+            <section id="functionreturn">
+                <h2>Return Types</h2>
+                <p>Functions can return a value to the caller using a return statement:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Function declaration with return type
+    int add(int a, int b);
+    
+    int main() {
+        int result;
+    
+        // Function call with arguments
+        result = add(3, 5);
+        cout &lt;&lt; "Sum: " &lt;&lt; result &lt;&lt; endl;
+    
+        return 0;
+    }
+    
+    // Function definition
+    int add(int a, int b) {
+        return a + b;
+    }</code></pre>
+                <p>This program defines a function <code>add(int a, int b)</code> that returns the sum of <code>a</code> and <code>b</code>.</p>
+            </section>
+    
+            <section id="functionoverloading">
+                <h2>Function Overloading</h2>
+                <p>C++ supports function overloading where multiple functions can have the same name but different parameters:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Function overloading
+    int add(int a, int b);
+    double add(double a, double b);
+    
+    int main() {
+        int intSum;
+        double doubleSum;
+    
+        // Function calls
+        intSum = add(3, 5);
+        doubleSum = add(3.5, 2.7);
+    
+        cout &lt;&lt; "Integer Sum: " &lt;&lt; intSum &lt;&lt; endl;
+        cout &lt;&lt; "Double Sum: " &lt;&lt; doubleSum &lt;&lt; endl;
+    
+        return 0;
+    }
+    
+    // Function definitions
+    int add(int a, int b) {
+        return a + b;
+    }
+    
+    double add(double a, double b) {
+        return a + b;
+    }</code></pre>
+                <p>This program demonstrates function overloading with two <code>add</code> functions for integer and double types.</p>
+            </section>
+        </section>
+
+        <section id="classes">
+            <h2>Classes and Objects</h2>
+            <section id="classdeclaration">
+                <h2>Class Declaration</h2>
+                <p>A class in C++ is a user-defined data type that encapsulates data (attributes) and functions (methods) that operate on the data. It serves as a blueprint for creating objects:</p>
+                <pre><code>class ClassName {
+        // Member variables
+        type member_variable1;
+        type member_variable2;
+        // ...
+    
+    public:
+        // Constructor(s)
+        ClassName(); // Default constructor
+        ClassName(type param1, type param2); // Parameterized constructor
+    
+        // Member functions
+        return_type member_function1(parameters);
+        return_type member_function2(parameters);
+        // ...
+    };</code></pre>
+                <p>Example:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Class declaration
+    class Car {
+        // Member variables
+        string brand;
+        int year;
+    
+    public:
+        // Constructor with parameters
+        Car(string b, int y) {
+            brand = b;
+            year = y;
+        }
+    
+        // Member function
+        void displayInfo() {
+            cout &lt;&lt; "Brand: " &lt;&lt; brand &lt;&lt; ", Year: " &lt;&lt; year &lt;&lt; endl;
+        }
+    };
+    
+    int main() {
+        // Object creation and usage
+        Car myCar("Toyota", 2022);
+        myCar.displayInfo();
+    
+        return 0;
+    }</code></pre>
+                <p>This program defines a class <code>Car</code> with member variables <code>brand</code> and <code>year</code>, a parameterized constructor, and a member function <code>displayInfo()</code> to display car information.</p>
+            </section>
+    
+            <section id="constructors">
+                <h2>Constructors</h2>
+                <p>Constructors are special member functions of a class that are automatically called when an object of the class is created. They initialize objects:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Class declaration
+    class Rectangle {
+        // Member variables
+        int length;
+        int width;
+    
+    public:
+        // Constructor with parameters
+        Rectangle(int l, int w) {
+            length = l;
+            width = w;
+        }
+    
+        // Member function to calculate area
+        int calculateArea() {
+            return length * width;
+        }
+    };
+    
+    int main() {
+        // Object creation and usage
+        Rectangle rect(5, 3);
+        int area = rect.calculateArea();
+        cout &lt;&lt; "Area of Rectangle: " &lt;&lt; area &lt;&lt; endl;
+    
+        return 0;
+    }</code></pre>
+                <p>This program defines a class <code>Rectangle</code> with member variables <code>length</code> and <code>width</code>, a parameterized constructor, and a member function <code>calculateArea()</code> to calculate the area of the rectangle.</p>
+            </section>
+    
+            <section id="accessspecifiers">
+                <h2>Access Specifiers</h2>
+                <p>C++ provides three access specifiers to control the visibility of class members:</p>
+                <ul>
+                    <li><code>public</code>: Members are accessible from outside the class.</li>
+                    <li><code>private</code>: Members are only accessible within the class.</li>
+                    <li><code>protected</code>: Similar to private but accessible in derived classes.</li>
+                </ul>
+                <p>Example:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Class declaration
+    class Circle {
+        // Private member variables
+        double radius;
+    
+    public:
+        // Constructor with parameter
+        Circle(double r) {
+            radius = r;
+        }
+    
+        // Public member function to calculate area
+        double calculateArea() {
+            return 3.14 * radius * radius;
+        }
+    };
+    
+    int main() {
+        // Object creation and usage
+        Circle myCircle(5.0);
+        double area = myCircle.calculateArea();
+        cout &lt;&lt; "Area of Circle: " &lt;&lt; area &lt;&lt; endl;
+    
+        return 0;
+    }</code></pre>
+                <p>This program defines a class <code>Circle</code> with a private member variable <code>radius</code>, a constructor, and a public member function <code>calculateArea()</code> to calculate the area of the circle.</p>
+            </section>
+        </section>
+
+        <section id="pointers">
+            <h2>Pointers</h2>
+            <section id="pointerdeclaration">
+                <h2>Pointer Declaration</h2>
+                <p>A pointer in C++ is a variable that stores the memory address of another variable. It allows direct manipulation of memory:</p>
+                <pre><code>type *pointer_name;</code></pre>
+                <p>Example:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int number = 10;
+        int *ptr;
+    
+        // Assigning address of 'number' to 'ptr'
+        ptr = &number;
+    
+        cout &lt;&lt; "Value of number: " &lt;&lt; number &lt;&lt; endl;
+        cout &lt;&lt; "Address of number: " &lt;&lt; &number &lt;&lt; endl;
+        cout &lt;&lt; "Value of pointer ptr: " &lt;&lt; ptr &lt;&lt; endl;
+        cout &lt;&lt; "Value pointed by ptr: " &lt;&lt; *ptr &lt;&lt; endl;
+    
+        return 0;
+    }</code></pre>
+                <p>This program demonstrates pointer declaration and usage in C++, including assigning the address of a variable, accessing the address, and dereferencing the pointer to get the value.</p>
+            </section>
+    
+            <section id="pointerarithmetic">
+                <h2>Pointer Arithmetic</h2>
+                <p>Pointers in C++ can be incremented, decremented, and manipulated for array traversal and dynamic memory allocation:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int numbers[] = {1, 2, 3, 4, 5};
+        int *ptr = numbers;
+    
+        // Print array elements using pointer arithmetic
+        for (int i = 0; i &lt; 5; ++i) {
+            cout &lt;&lt; "Element " &lt;&lt; i &lt;&lt; ": " &lt;&lt; *ptr &lt;&lt; endl;
+            ptr++;
+        }
+    
+        return 0;
+    }</code></pre>
+                <p>This program demonstrates pointer arithmetic by iterating through an array using a pointer and printing its elements.</p>
+            </section>
+    
+            <section id="pointertofunction">
+                <h2>Pointer to Functions</h2>
+                <p>Pointers can also point to functions, allowing dynamic function invocation and callback mechanisms:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    // Function declaration
+    void sayHello() {
+        cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    }
+    
+    int main() {
+        // Pointer to function
+        void (*ptr)() = sayHello;
+    
+        // Call function using pointer
+        ptr();
+    
+        return 0;
+    }</code></pre>
+                <p>This program demonstrates a pointer to a function <code>sayHello()</code> and invokes it through the pointer.</p>
+            </section>
+    
+            <section id="nullpointer">
+                <h2>Null Pointers</h2>
+                <p>Null pointers in C++ are pointers that do not point to any memory location. They are used to indicate that the pointer is not intended to point to a valid object:</p>
+                <pre><code>#include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        int *ptr = nullptr;
+    
+        // Check if pointer is null
+        if (ptr == nullptr) {
+            cout &lt;&lt; "Pointer is nullptr" &lt;&lt; endl;
+        } else {
+            cout &lt;&lt; "Pointer is not nullptr" &lt;&lt; endl;
+        }
+    
+        return 0;
+    }</code></pre>
+                <p>This program demonstrates the usage of null pointers in C++.</p>
+            </section>
+
+        </section>
+
+        <section id="templates">
+            <h2>Templates</h2>
+            <section id="functiontemplate">
+                <h2>Function Templates</h2>
+                <p>A function template in C++ allows you to write a generic function that can work with any data type. Syntax:</p>
+                <pre><code>template &lt;typename T&gt;
+    T functionName(T a, T b) {
+        // Function body
+        return a + b;
+    }</code></pre>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of using a function template --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    using namespace std;
+    
+    // Function template
+    template &lt;typename T&gt;
+    T add(T a, T b) {
+        return a + b;
+    }
+    
+    int main() {
+        // Using the add function template with different types
+        cout &lt;&lt; "Sum of integers: " &lt;&lt; add(5, 10) &lt;&lt; endl;
+        cout &lt;&lt; "Sum of doubles: " &lt;&lt; add(3.5, 2.7) &lt;&lt; endl;
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates a function template <code>add</code> that adds two values of type <code>T</code>. It shows how <code>add</code> is used with both integers and doubles.</p>
+            </section>
+    
+            <section id="classtemplate">
+                <h2>Class Templates</h2>
+                <p>A class template in C++ allows you to define a generic class that can work with any data type. Syntax:</p>
+                <pre><code>template &lt;typename T&gt;
+    class ClassName {
+        // Class members and methods
+    };</code></pre>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of using a class template --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    using namespace std;
+    
+    // Class template
+    template &lt;typename T&gt;
+    class Pair {
+    private:
+        T first, second;
+    
+    public:
+        Pair(T f, T s) : first(f), second(s) {}
+    
+        T getFirst() const {
+            return first;
+        }
+    
+        T getSecond() const {
+            return second;
+        }
+    };
+    
+    int main() {
+        // Using the Pair class template with different types
+        Pair&lt;int&gt; intPair(1, 2);
+        Pair&lt;double&gt; doublePair(3.5, 2.7);
+    
+        cout &lt;&lt; "First element of intPair: " &lt;&lt; intPair.getFirst() &lt;&lt; endl;
+        cout &lt;&lt; "Second element of doublePair: " &lt;&lt; doublePair.getSecond() &lt;&lt; endl;
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates a class template <code>Pair</code> that holds two elements of type <code>T</code>. It shows how <code>Pair</code> is instantiated with both integers and doubles.</p>
+            </section>
+    
+            <section id="templatespecialization">
+                <h2>Template Specialization</h2>
+                <p>Template specialization allows you to provide a different implementation for a specific data type. Syntax:</p>
+                <pre><code>template &lt;&gt;
+    class ClassName&lt;specific_type&gt; {
+        // Specialized implementation
+    };</code></pre>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of template specialization --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    using namespace std;
+    
+    // Generic class template
+    template &lt;typename T&gt;
+    class Printer {
+    public:
+        void print(T value) {
+            cout &lt;&lt; "Generic Printer: " &lt;&lt; value &lt;&lt; endl;
+        }
+    };
+    
+    // Template specialization for string
+    template &lt;&gt;
+    class Printer&lt;string&gt; {
+    public:
+        void print(string value) {
+            cout &lt;&lt; "String Printer: " &lt;&lt; value &lt;&lt; endl;
+        }
+    };
+    
+    int main() {
+        // Using generic Printer
+        Printer&lt;int&gt; intPrinter;
+        intPrinter.print(42);
+    
+        // Using specialized Printer for string
+        Printer&lt;string&gt; stringPrinter;
+        stringPrinter.print("Hello, World!");
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates template specialization with the <code>Printer</code> class template. It provides a specialized implementation for strings while using a generic implementation for other types.</p>
+            </section>
+
+        </section>
+
+        <section id="stl">
+            <h2>Standard Template Library (STL)</h2>
+            <section id="stlcontainers">
+                <h2>STL Containers</h2>
+                <p>The STL provides several container classes that are used to store collections of data:</p>
+                <ul>
+                    <li><strong>Vector:</strong> Dynamic array.</li>
+                    <li><strong>List:</strong> Doubly linked list.</li>
+                    <li><strong>Deque:</strong> Double-ended queue.</li>
+                    <li><strong>Map:</strong> Associative container that stores elements formed by a combination of a key value and a mapped value.</li>
+                    <li><strong>Set:</strong> Associative container that contains a sorted set of unique objects.</li>
+                </ul>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of using STL containers --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    #include &lt;vector&gt;
+    #include &lt;map&gt;
+    using namespace std;
+    
+    int main() {
+        // Vector container
+        vector&lt;int&gt; numbers = {5, 2, 7, 1, 4};
+        cout &lt;&lt; "Vector elements: ";
+        for (int num : numbers) {
+            cout &lt;&lt; num &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    
+        // Map container
+        map&lt;string, int&gt; ageMap;
+        ageMap["Alice"] = 25;
+        ageMap["Bob"] = 30;
+        ageMap["Charlie"] = 28;
+        cout &lt;&lt; "Age of Bob: " &lt;&lt; ageMap["Bob"] &lt;&lt; endl;
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates usage of STL containers `vector` and `map`.</p>
+            </section>
+    
+            <section id="stlalgorithms">
+                <h2>STL Algorithms</h2>
+                <p>The STL provides algorithms that operate on containers, performing various operations like sorting, searching, and modifying elements:</p>
+                <ul>
+                    <li><strong>Sort:</strong> Sorts elements in a container.</li>
+                    <li><strong>Find:</strong> Searches for an element in a container.</li>
+                    <li><strong>Transform:</strong> Applies a function to a range of elements.</li>
+                    <li><strong>Count:</strong> Counts the occurrences of a value in a container.</li>
+                </ul>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of using STL algorithms --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    #include &lt;algorithm&gt;
+    #include &lt;vector&gt;
+    using namespace std;
+    
+    int main() {
+        // Vector container
+        vector&lt;int&gt; numbers = {5, 2, 7, 1, 4};
+    
+        // Sorting vector elements
+        sort(numbers.begin(), numbers.end());
+    
+        // Output sorted elements
+        cout &lt;&lt; "Sorted vector: ";
+        for (int num : numbers) {
+            cout &lt;&lt; num &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    
+        // Finding an element
+        int target = 7;
+        auto it = find(numbers.begin(), numbers.end(), target);
+        if (it != numbers.end()) {
+            cout &lt;&lt; "Found " &lt;&lt; target &lt;&lt; " at index " &lt;&lt; distance(numbers.begin(), it) &lt;&lt; endl;
+        } else {
+            cout &lt;&lt; target &lt;&lt; " not found." &lt;&lt; endl;
+        }
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates usage of STL algorithms `sort` and `find` with a vector.</p>
+            </section>
+    
+            <section id="stliterators">
+                <h2>STL Iterators</h2>
+                <p>STL iterators are used to iterate through elements of containers. They provide an interface similar to pointers:</p>
+                <ul>
+                    <li><strong>Begin:</strong> Returns an iterator pointing to the first element in the container.</li>
+                    <li><strong>End:</strong> Returns an iterator pointing to the past-the-end element in the container.</li>
+                    <li><strong>Advance:</strong> Advances an iterator by a specified number of positions.</li>
+                    <li><strong>Distance:</strong> Computes the number of elements between two iterators.</li>
+                </ul>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of using STL iterators --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    #include &lt;vector&gt;
+    using namespace std;
+    
+    int main() {
+        // Vector container
+        vector&lt;int&gt; numbers = {5, 2, 7, 1, 4};
+    
+        // Using iterators to traverse and print vector elements
+        cout &lt;&lt; "Vector elements: ";
+        for (auto it = numbers.begin(); it != numbers.end(); ++it) {
+            cout &lt;&lt; *it &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates usage of STL iterators to traverse and print vector elements.</p>
+            </section>
+
+        </section>
+
+        <section id="fileio">
+            <h2>File I/O</h2>
+            <section id="filewriting">
+                <h2>File Writing</h2>
+                <p>To write to a file in C++, you need to:</p>
+                <ol>
+                    <li>Include the `<fstream>` header.</li>
+                    <li>Open a file using an output file stream (`ofstream`).</li>
+                    <li>Write data to the file using stream insertion (`<<`) operator.</li>
+                    <li>Close the file.</li>
+                </ol>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of file writing in C++ --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    #include &lt;fstream&gt;
+    using namespace std;
+    
+    int main() {
+        // Open a file for writing
+        ofstream outfile("example.txt");
+    
+        // Write data to the file
+        if (outfile.is_open()) {
+            outfile &lt;&lt; "Hello, World!" &lt;&lt; endl;
+            outfile &lt;&lt; 42 &lt;&lt; endl;
+            outfile.close();
+            cout &lt;&lt; "File 'example.txt' has been written." &lt;&lt; endl;
+        } else {
+            cout &lt;&lt; "Unable to open file." &lt;&lt; endl;
+        }
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates writing data (string and integer) to a file named `example.txt`.</p>
+            </section>
+    
+            <section id="filereading">
+                <h2>File Reading</h2>
+                <p>To read from a file in C++, you need to:</p>
+                <ol>
+                    <li>Include the `<fstream>` header.</li>
+                    <li>Open a file using an input file stream (`ifstream`).</li>
+                    <li>Read data from the file using stream extraction (`>>`) operator.</li>
+                    <li>Close the file.</li>
+                </ol>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of file reading in C++ --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    #include &lt;fstream&gt;
+    using namespace std;
+    
+    int main() {
+        // Open a file for reading
+        ifstream infile("example.txt");
+    
+        // Read data from the file
+        if (infile.is_open()) {
+            string line;
+            while (getline(infile, line)) {
+                cout &lt;&lt; "Read from file: " &lt;&lt; line &lt;&lt; endl;
+            }
+            infile.close();
+        } else {
+            cout &lt;&lt; "Unable to open file." &lt;&lt; endl;
+        }
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates reading data from the file `example.txt` and printing each line.</p>
+            </section>
+
+        </section>
+
+        <section id="advanced">
+            <h2>Advanced Topics</h2>
+            <section id="memorymanagement">
+                <h2>Memory Management</h2>
+                <p>In C++, memory management involves allocating and releasing memory:</p>
+                <ul>
+                    <li><strong>Static Memory Allocation:</strong> Variables declared at compile-time.</li>
+                    <li><strong>Dynamic Memory Allocation:</strong> Memory allocated at runtime using `new` and released using `delete`.</li>
+                    <li><strong>Smart Pointers:</strong> Automatic memory management using smart pointers (`unique_ptr`, `shared_ptr`, `weak_ptr`).</li>
+                </ul>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of dynamic memory allocation in C++ --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    using namespace std;
+    
+    int main() {
+        // Dynamic memory allocation
+        int *ptr = new int(5);
+    
+        // Use the allocated memory
+        cout &lt;&lt; "Dynamic memory value: " &lt;&lt; *ptr &lt;&lt; endl;
+    
+        // Release the allocated memory
+        delete ptr;
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates dynamic memory allocation using `new` and releasing memory using `delete`.</p>
+            </section>
+    
+            <section id="multithreading">
+                <h2>Multithreading</h2>
+                <p>Multithreading in C++ allows programs to execute multiple threads concurrently:</p>
+                <ul>
+                    <li><strong>Thread Creation:</strong> Create threads using `<thread>` header and `std::thread` class.</li>
+                    <li><strong>Thread Management:</strong> Joining threads with `join()`, detaching threads with `detach()`, and accessing thread IDs.</li>
+                    <li><strong>Synchronization:</strong> Synchronize threads using mutex (`std::mutex`) for shared resource protection.</li>
+                </ul>
+                <p>Example:</p>
+                <pre><code>&lt;!-- Example of multithreading in C++ --&gt;
+    &lt;script type="text/cpp"&gt;
+    #include &lt;iostream&gt;
+    #include &lt;thread&gt;
+    #include &lt;mutex&gt;
+    using namespace std;
+    
+    // Function to be executed by threads
+    void threadFunction(int id, mutex &mtx) {
+        mtx.lock();
+        cout &lt;&lt; "Thread " &lt;&lt; id &lt;&lt; " is executing." &lt;&lt; endl;
+        mtx.unlock();
+    }
+    
+    int main() {
+        // Mutex for synchronization
+        mutex mtx;
+    
+        // Creating threads
+        thread t1(threadFunction, 1, ref(mtx));
+        thread t2(threadFunction, 2, ref(mtx));
+    
+        // Waiting for threads to finish
+        t1.join();
+        t2.join();
+    
+        return 0;
+    }
+    &lt;/script&gt;</code></pre>
+                <p>This program demonstrates creating and synchronizing threads using `std::thread` and `std::mutex`.</p>
+            </section>
+            <center>
+                <p>  <a class="navlink" id="Home" onclick="window.location.href='index.html';">Home</a></p>
+            </center>
+            <br>
+            <br>
+
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; Tech-Titans  All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
